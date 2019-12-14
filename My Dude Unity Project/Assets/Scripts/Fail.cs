@@ -15,8 +15,14 @@ public class Fail : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log("Touched Trigger");
+        if (collision.tag == "Player")
+        {
+            loseText.SetActive(true);
+            /// Que sound effect here
+            audiosource.Play();
+            Debug.Log("The player has lost");
+        }
+
     }
-
-
 }
